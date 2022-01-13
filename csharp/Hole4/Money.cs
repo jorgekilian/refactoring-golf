@@ -28,6 +28,10 @@ namespace Hole4
                 throw new Incalculable();
             }
 
+            return Create(other);
+        }
+
+        private Money Create(Money other) {
             return new Money(value - other.value, currency);
         }
     }
