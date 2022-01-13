@@ -32,7 +32,7 @@ namespace Hole4
                     throw new Incalculable();
                 }
 
-                return new Money(total.value - other.value, first.currency);
+                return new Money(total.value - other.value, total.currency);
             }
         }
     }
