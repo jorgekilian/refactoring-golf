@@ -13,21 +13,24 @@ namespace Hole5
             this.percent = percent;
         }
 
-        public Money NetAmount(Money first, params Money[] rest)
-        {
+        public Money NetAmount(Money first, params Money[] rest) {
             List<Money> monies = rest.ToList();
 
             Money total = first;
 
-            foreach (Money next in monies)
-            {
+            foreach (Money next in monies) {
                 total = total.Plus(next);
             }
 
-            Double amount = total.value * (percent / 100d);
-            Money tax = Money.Create(Convert.ToInt32(amount), first.currency);
+            Money tax = Apply(first, total);
 
             return total.Minus(tax);
+        }
+
+        private Money Apply(Money first, Money total) {
+            Double amount = total.value * (percent / 100d);
+            Money tax = Money.Create(Convert.ToInt32(amount), first.currency);
+            return tax;
         }
     }
 }
