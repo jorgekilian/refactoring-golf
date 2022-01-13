@@ -13,6 +13,10 @@ namespace Hole4
             this.currency = currency;
         }
 
+        public static Money Create(int value, string currency) {
+            return new Money(value, currency);
+        }
+
         public Money Plus(Money other)
         {
             if (!other.currency.Equals(currency))
@@ -29,10 +33,6 @@ namespace Hole4
             }
 
             return Create(value - other.value, currency);
-        }
-
-        private Money Create(int value, string currency) {
-            return new Money(value, currency);
         }
     }
 }
