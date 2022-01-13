@@ -13,26 +13,27 @@ namespace Hole4
             this.percent = percent;
         }
 
-        public Money NetAmount(Money first, params Money[] rest)
-        {
+        public Money NetAmount(Money first, params Money[] rest) {
             List<Money> monies = rest.ToList();
 
             Money total = first;
 
-            foreach (Money next in monies)
-            {
+            foreach (Money next in monies) {
                 total = total.Plus(next);
             }
 
             Double amount = total.value * (percent / 100d);
             Money tax = new Money(Convert.ToInt32(amount), first.currency);
 
-            if (!total.currency.Equals(tax.currency))
-            {
-                throw new Incalculable();
-            }
+            return Minus(first, total, tax);
 
-            return new Money(total.value - tax.value, first.currency);
+            static Money Minus(Money first, Money total, Money tax) {
+                if (!total.currency.Equals(tax.currency)) {
+                    throw new Incalculable();
+                }
+
+                return new Money(total.value - tax.value, first.currency);
+            }
         }
     }
 }
