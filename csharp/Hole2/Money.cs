@@ -1,13 +1,15 @@
-﻿namespace Hole2
-{
-    public class Money<A, B>
-    {
-        public readonly A value;
-        public readonly B currency;
+﻿using System;
 
-        public Money(A value, B currency)
+namespace Hole2
+{
+    public class Money
+    {
+        public readonly int value;
+        public readonly String currency;
+
+        public Money(int first, String currency)
         {
-            this.value = value;
+            this.value = first;
             this.currency = currency;
         }
     }
