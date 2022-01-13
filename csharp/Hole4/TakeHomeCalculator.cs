@@ -27,12 +27,12 @@ namespace Hole4
 
             return Minus(first, total, tax);
 
-            static Money Minus(Money first, Money total, Money tax) {
-                if (!total.currency.Equals(tax.currency)) {
+            static Money Minus(Money first, Money total, Money other) {
+                if (!total.currency.Equals(other.currency)) {
                     throw new Incalculable();
                 }
 
-                return new Money(total.value - tax.value, first.currency);
+                return new Money(total.value - other.value, first.currency);
             }
         }
     }
