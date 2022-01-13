@@ -15,11 +15,11 @@ namespace Hole2
 
         public Money<int, String> NetAmount(Money<int, String> first, params Money<int, String>[] rest)
         {
-            List<Money<int, String>> pairs = rest.ToList();
+            List<Money<int, String>> monies = rest.ToList();
 
             Money<int, String> total = first;
 
-            foreach (Money<int, String> next in pairs)
+            foreach (Money<int, String> next in monies)
             {
                 if (!next.currency.Equals(total.currency))
                 {
@@ -27,7 +27,7 @@ namespace Hole2
                 }
             }
 
-            foreach (Money<int, String> next in pairs)
+            foreach (Money<int, String> next in monies)
             {
                 total = new Money<int, String>(total.value + next.value, next.currency);
             }
