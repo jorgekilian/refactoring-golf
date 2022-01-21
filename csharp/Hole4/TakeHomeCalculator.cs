@@ -27,8 +27,11 @@ namespace Hole4
             Double amount = total.value * (percent / 100d);
             Money tax = Money.Create(Convert.ToInt32(amount), first.currency);
 
-            if (!total.currency.Equals(tax.currency))
-            {
+            return Minus(total, tax);
+        }
+
+        private static Money Minus(Money total, Money tax) {
+            if (!total.currency.Equals(tax.currency)) {
                 throw new Incalculable();
             }
 
