@@ -13,7 +13,8 @@ namespace Hole4
             this.currency = currency;
         }
 
-        public static Money Create(int value, String currency) {
+        public static Money Create(int value, String currency)
+        {
             return new Money(value, currency);
         }
 
@@ -24,7 +25,7 @@ namespace Hole4
                 throw new Incalculable();
             }
 
-            return new Money(value + other.value, other.currency);
+            return Create(value + other.value, other.currency);
         }
 
         public Money Minus(Money tax) 
