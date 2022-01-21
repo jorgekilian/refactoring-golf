@@ -10,6 +10,11 @@ namespace Hole5 {
             this.percent = percent;
         }
 
+        public static TaxRate Of(int percent) 
+        {
+            return new TaxRate(percent);
+        }
+
         public Money Apply(Money total) 
         {
             Double amount = total.value * (percent / 100d);
