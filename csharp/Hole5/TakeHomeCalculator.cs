@@ -25,7 +25,6 @@ namespace Hole5
             }
 
             Money tax = taxRate.Apply(total);
-
             return total.Minus(tax);
         }
     }
