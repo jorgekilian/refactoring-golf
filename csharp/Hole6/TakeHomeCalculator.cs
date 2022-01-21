@@ -16,7 +16,7 @@ namespace Hole6
         {
             List<Money> monies = rest.ToList();
 
-            Money total = monies.Aggregate(first, (money, next) => money.Plus(next));
+            Money total = monies.Aggregate(first, (money, x) => money.Plus(x));
 
             Money tax = taxRate.Apply(total);
             return total.Minus(tax);
