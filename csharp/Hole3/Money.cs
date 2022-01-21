@@ -13,14 +13,14 @@ namespace Hole3
             this.currency = currency;
         }
 
-        public Money Plus(Money next) 
+        public Money Plus(Money other) 
         {
             Money total = this;
-            if (!next.currency.Equals(total.currency)) {
+            if (!other.currency.Equals(total.currency)) {
                 throw new Incalculable();
             }
 
-            total = new Money(total.value + next.value, next.currency);
+            total = new Money(total.value + other.value, other.currency);
             return total;
         }
     }
