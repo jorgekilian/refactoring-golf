@@ -1,6 +1,6 @@
 ﻿namespace Hole2
 {
-    public class Money<A, B>
+    public class Money<B>
     {
         public readonly int value;
         public readonly string currency;
