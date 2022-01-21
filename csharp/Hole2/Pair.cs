@@ -2,7 +2,7 @@
 {
     public class Money<A, B>
     {
-        public readonly A value;
+        public readonly int value;
         public readonly B currency;
 
         public Money(int value, string currency)
