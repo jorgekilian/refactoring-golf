@@ -3,12 +3,12 @@
     public class Money<A, B>
     {
         public readonly A value;
-        public readonly B second;
+        public readonly B currency;
 
-        public Money(A value, B second)
+        public Money(A value, B currency)
         {
             this.value = value;
-            this.second = second;
+            this.currency = currency;
         }
     }
 }
