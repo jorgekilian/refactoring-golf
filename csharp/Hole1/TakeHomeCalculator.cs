@@ -38,9 +38,8 @@ namespace Hole1
             if (!total.second.Equals(tax.second)) {
                 throw new Incalculable();
             }
-            else {
-                return new Pair<int, String>(total.first - tax.first, first.second);
-            }
+
+            return new Pair<int, String>(total.first - tax.first, first.second);
         }
     }
 }
