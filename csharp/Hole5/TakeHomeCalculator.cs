@@ -6,11 +6,9 @@ namespace Hole5
 {
     public class TakeHomeCalculator
     {
-        private readonly int percent;
         private readonly TaxRate taxRate;
 
         public TakeHomeCalculator(int percent) {
-            this.percent = percent;
             taxRate = new TaxRate(this);
         }
 
