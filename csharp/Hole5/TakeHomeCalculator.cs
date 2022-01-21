@@ -8,7 +8,7 @@ namespace Hole5
     {
         private readonly TaxRate taxRate;
 
-        public TakeHomeCalculator(int percent, TaxRate taxRate) {
+        public TakeHomeCalculator(TaxRate taxRate) {
             taxRate;
         }
 
