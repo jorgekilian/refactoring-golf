@@ -2,7 +2,7 @@
 
 namespace Hole5 {
     public class TaxRate {
-        private TakeHomeCalculator percent;
+        private int percent;
         public TaxRate(int percent) 
         {
             this.percent = percent;
